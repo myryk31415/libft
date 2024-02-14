@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2023/12/17 19:54:11 by padam            ###   ########.fr        #
+#    Updated: 2024/02/14 20:32:13 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,14 +64,15 @@ OBJS = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
+	@printf "%-200s\n" "$(NAME) compiled"
 
 $(OBJ_PATH)	:
-	mkdir -p $(OBJ_PATH)
-	mkdir -p $(addprefix $(OBJ_PATH)/, $(OBJ_DIRS))
+	@mkdir -p $(OBJ_PATH)
+	@mkdir -p $(addprefix $(OBJ_PATH)/, $(OBJ_DIRS))
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	@printf "%-50s\r" "$(CC) $@"
+	@printf "%-200s\r" "$(CC) $(CFLAGS) -o $@"
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
