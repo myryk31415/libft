@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: padam <padam@student.42.fr>                +#+  +:+       +#+        */
+/*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:24:30 by padam             #+#    #+#             */
-/*   Updated: 2023/10/19 13:49:25 by padam            ###   ########.fr       */
+/*   Updated: 2024/02/14 16:57:12 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*get_next_line(int fd);
 
 #endif
