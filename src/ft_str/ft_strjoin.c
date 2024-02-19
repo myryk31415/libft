@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   xft_strjoin.c                                      :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: padam <padam@student.42.fr>                +#+  +:+       +#+        */
+/*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 13:47:29 by padam             #+#    #+#             */
-/*   Updated: 2023/10/09 15:24:46 by padam            ###   ########.fr       */
+/*   Updated: 2024/02/19 17:18:43 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	joint = malloc(l * sizeof(char));
 	if (!joint)
 		return (NULL);
-	ft_strlcpy(joint, s1, l);
-	ft_strlcat(joint, s2, l);
+	if (s1)
+		ft_strlcpy(joint, s1, l);
+	if (s2)
+		ft_strlcat(joint, s2, l);
 	return (joint);
 }
