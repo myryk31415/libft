@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/04/08 00:04:57 by padam            ###   ########.fr        #
+#    Updated: 2024/04/08 00:13:26 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
-	@printf "%-200s\n" "$(NAME) compiled"
+	@printf "%-200s\r" "$(NAME) compiled"
 
 $(OBJ_PATH)	:
 	@mkdir -p $(OBJ_PATH)
@@ -76,10 +76,10 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
-	rm -rf $(OBJ_PATH)
+	@rm -rf $(OBJ_PATH)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
