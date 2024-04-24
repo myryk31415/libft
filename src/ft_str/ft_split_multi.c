@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:32:20 by padam             #+#    #+#             */
-/*   Updated: 2024/04/24 16:38:11 by padam            ###   ########.fr       */
+/*   Updated: 2024/04/24 20:00:34 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	**ft_split_multi(char const *s, char *c)
 	lettercount = 0;
 	while (ft_strchr(c, *s) && *s)
 		s++;
-	while (ft_strchr(c, s[lettercount]) && s[lettercount])
+	while (!ft_strchr(c, s[lettercount]) && s[lettercount])
 		lettercount++;
 	if (lettercount > 0 && ++iteration)
 	{
