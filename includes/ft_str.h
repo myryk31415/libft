@@ -6,13 +6,14 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:24:30 by padam             #+#    #+#             */
-/*   Updated: 2024/02/14 16:57:12 by padam            ###   ########.fr       */
+/*   Updated: 2024/04/24 16:35:44 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STR_H
 # define FT_STR_H
 
+char	*ft_split_multi(char const *s, char *c);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
