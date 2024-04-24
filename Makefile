@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/04/08 00:13:26 by padam            ###   ########.fr        #
+#    Updated: 2024/04/24 16:37:07 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SRCS_STR =	ft_split.c			ft_strchr.c			ft_strdup.c			\
 			ft_striteri.c		ft_strjoin.c		ft_strlcat.c		\
 			ft_strlcpy.c		ft_strlen.c			ft_strmapi.c		\
 			ft_strncmp.c		ft_strnstr.c		ft_strrchr.c		\
-			ft_strtrim.c		ft_substr.c			get_next_line.c
+			ft_strtrim.c		ft_substr.c			get_next_line.c		\
+			ft_split_multi.c
 
 SRC_NAME =	$(addprefix ft_char/,	$(SRCS_CHAR))	\
 			$(addprefix ft_fd/,		$(SRCS_FD))		\

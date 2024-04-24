@@ -6,13 +6,13 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:32:20 by padam             #+#    #+#             */
-/*   Updated: 2024/04/24 16:34:55 by padam            ###   ########.fr       */
+/*   Updated: 2024/04/24 16:38:11 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char *c)
+char	**ft_split_multi(char const *s, char *c)
 {
 	static int	iteration = 0;
 	int			lettercount;
@@ -25,7 +25,7 @@ char	**ft_split(char const *s, char *c)
 		lettercount++;
 	if (lettercount > 0 && ++iteration)
 	{
-		split_words = ft_split(s + lettercount, c);
+		split_words = ft_split_multi(s + lettercount, c);
 		if (iteration-- && !split_words)
 			return (NULL);
 		split_words[iteration] = ft_substr(s, 0, lettercount);
