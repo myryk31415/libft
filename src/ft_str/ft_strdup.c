@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: padam <padam@student.42.fr>                +#+  +:+       +#+        */
+/*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 17:32:52 by padam             #+#    #+#             */
-/*   Updated: 2023/10/09 19:12:11 by padam            ###   ########.fr       */
+/*   Updated: 2024/04/26 20:55:16 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *src)
 	int		i;
 
 	i = 0;
+	if (!src)
+		return (NULL);
 	ptr = ft_calloc(sizeof (char), ft_strlen(src) + 1);
 	if (ptr == NULL)
 		return (NULL);
