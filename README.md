@@ -2,18 +2,9 @@
 
 This is a project for creating a library in C, containing a collection of functions that replicate the behavior of standard library functions. The project is divided into mandatory and additional parts, each containing a set of functions to implement.
 
-### Technical Considerations
-
-- Avoid using global variables.
-- Helper functions should be defined as static to limit their scope to the appropriate file.
-- All files should be placed at the root of your repository.
-- Unused files should not be turned in.
-- Compilation flags `-Wall -Wextra -Werror` must be used for all `.c` files.
-- The library must be created using the `ar` command; `libtool` is not allowed.
-
 ### Part 1 - Libc Functions
 
-In this part, you'll replicate the behavior of standard libc functions with names prefixed by `ft_`. Functions to implement include:
+In this part, the behavior of standard libc functions are replicated with names prefixed by `ft_`. Functions to implement include:
 
 - `isalpha`
 - `isdigit`
@@ -55,9 +46,7 @@ This part involves creating additional functions that either complement the libc
 - `ft_putendl_fd`
 - `ft_putnbr_fd`
 
-Each function has its prototype, description, and parameters documented.
-
-### Bonus
+### Bonus - Linked Lists
 
 The Bonus functions give some insight about linked lists:
 
