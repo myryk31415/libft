@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2023/12/17 19:54:11 by padam            ###   ########.fr        #
+#    Updated: 2024/04/24 16:37:07 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SRCS_STR =	ft_split.c			ft_strchr.c			ft_strdup.c			\
 			ft_striteri.c		ft_strjoin.c		ft_strlcat.c		\
 			ft_strlcpy.c		ft_strlen.c			ft_strmapi.c		\
 			ft_strncmp.c		ft_strnstr.c		ft_strrchr.c		\
-			ft_strtrim.c		ft_substr.c			get_next_line.c
+			ft_strtrim.c		ft_substr.c			get_next_line.c		\
+			ft_split_multi.c
 
 SRC_NAME =	$(addprefix ft_char/,	$(SRCS_CHAR))	\
 			$(addprefix ft_fd/,		$(SRCS_FD))		\
@@ -64,21 +65,22 @@ OBJS = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
+	@printf "%-200s\r" "$(NAME) compiled"
 
 $(OBJ_PATH)	:
-	mkdir -p $(OBJ_PATH)
-	mkdir -p $(addprefix $(OBJ_PATH)/, $(OBJ_DIRS))
+	@mkdir -p $(OBJ_PATH)
+	@mkdir -p $(addprefix $(OBJ_PATH)/, $(OBJ_DIRS))
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	@printf "%-50s\r" "$(CC) $@"
+	@printf "%-100s\r" "$(CC) $(CFLAGS) -o $@"
 	@$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
-	rm -rf $(OBJ_PATH)
+	@rm -rf $(OBJ_PATH)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

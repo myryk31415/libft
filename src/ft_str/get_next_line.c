@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: padam <padam@student.42.fr>                +#+  +:+       +#+        */
+/*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:25:18 by padam             #+#    #+#             */
-/*   Updated: 2023/11/09 18:25:25 by padam            ###   ########.fr       */
+/*   Updated: 2024/04/28 16:18:49 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,16 @@ int	get_char_count(char *str, int len)
 	return (len);
 }
 
-int	fill_stat_buf(char **stat, char *buf, int len)
+int	fill_stat_buf(char *stat, char *buf, int len)
 {
-	free(*stat);
-	*stat = NULL;
+	*stat = '\0';
 	if (len)
-	{
-		*stat = malloc(len + 1);
-		if (!*stat)
-			return (0);
-		stat[0][len] = '\0';
-		ft_memcpy(*stat, buf, len);
-	}
+		ft_memcpy(stat, buf, len);
+	stat[len] = '\0';
 	return (1);
 }
 
-char	*handle_stat(char *temp, char **stat)
+char	*handle_stat(char *temp, char *stat)
 {
 	int		cpy_count;
 	char	*line;
@@ -57,8 +51,7 @@ char	*handle_stat(char *temp, char **stat)
 	line = malloc(cpy_count + 1);
 	if (!line)
 	{
-		free(*stat);
-		*stat = NULL;
+		*stat = '\0';
 		return (NULL);
 	}
 	line[cpy_count] = '\0';
@@ -72,7 +65,7 @@ char	*handle_stat(char *temp, char **stat)
 }
 
 // recursivly read from fd and store in buf
-char	*recursive(char *line, int fd, int i, char **stat)
+char	*recursive(char *line, int fd, int i, char *stat)
 {
 	char	buf_tmp[BUFFER_SIZE];
 	int		offset;
@@ -80,8 +73,7 @@ char	*recursive(char *line, int fd, int i, char **stat)
 	int		cp;
 
 	offset = BUFFER_SIZE * i;
-	if (*stat)
-		offset += ft_strlen(*stat);
+	offset += ft_strlen(stat);
 	r_out = read(fd, &buf_tmp, BUFFER_SIZE);
 	if (r_out == -1)
 		return (NULL);
@@ -92,9 +84,7 @@ char	*recursive(char *line, int fd, int i, char **stat)
 	{
 		if (!fill_stat_buf(stat, buf_tmp + cp, r_out - cp) || offset + cp == 0)
 			return (NULL);
-		line = malloc(offset + cp + 1);
-		if (line)
-			line[offset + cp] = '\0';
+		line = ft_calloc(offset + cp + 1, 1);
 	}
 	if (line)
 		ft_memcpy(line + offset, buf_tmp, cp);
@@ -105,26 +95,23 @@ char	*recursive(char *line, int fd, int i, char **stat)
 char	*get_next_line(int fd)
 {
 	char				*line;
-	static char			*stat[10240];
+	static char			stat[10240][BUFFER_SIZE + 1];
 	char				temp[BUFFER_SIZE + 1];
 
 	line = NULL;
 	*temp = '\0';
 	if (BUFFER_SIZE < 1)
 		return (NULL);
-	if (stat[fd])
+	if (*(stat[fd]))
 	{
 		ft_strlcpy(temp, stat[fd], BUFFER_SIZE + 1);
 		if (ft_memchr(temp, '\n', ft_strlen(temp)))
-			return (handle_stat(temp, &stat[fd]));
+			return (handle_stat(temp, stat[fd]));
 	}
-	line = recursive(line, fd, 0, &stat[fd]);
+	line = recursive(line, fd, 0, stat[fd]);
 	if (line)
 		ft_memcpy(line, temp, ft_strlen(temp));
 	else
-	{
-		free(stat[fd]);
-		stat[fd] = NULL;
-	}
+		*(stat[fd]) = '\0';
 	return (line);
 }
