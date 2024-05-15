@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   length.c                                           :+:      :+:    :+:   */
+/*   ft_vec.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 22:11:20 by padam             #+#    #+#             */
-/*   Updated: 2024/05/15 12:19:56by padam            ###   ########.fr       */
+/*   Created: 2024/05/14 20:56:56 by padam             #+#    #+#             */
+/*   Updated: 2024/05/14 21:11:09by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <math.h>
+#ifndef FT_VEC_H
+# define FT_VEC_H
 
-
-double	vec_len(t_vec vec)
+typedef struct	s_vec
 {
-	double	side_tmp;
+	double	x;
+	double	y;
+	double	z;
+}	t_vec;
 
-	side_tmp = ft_magnitude(vec.x, vec.y);
-	return (ft_magnitude(side_tmp, vec.z));
-}
+t_vec	vec_add(t_vec a, t_vec b);
+t_vec	vec_sub(t_vec a, t_vec b);
+t_vec	vec_mul(t_vec a, double b);
+t_vec	vec_div(t_vec a, double b);
 
-t_vec	vec_norm(t_vec vec)
-{
-	double	length;
+double	vec_len(t_vec vec);
+t_vec	vec_norm(t_vec vec);
+double	vec_dist(t_vec a, t_vec b);
 
-	length = vec_len(vec);
-	vec.x /= length;
-	vec.y /= length;
-	vec.z /= length;
-	return (vec);
-}
-
-double	vec_dist(t_vec a, t_vec b)
-{
-	return (vec_len(vec_sub(a, b)));
-}
+#endif

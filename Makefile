@@ -6,20 +6,20 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/04/24 16:37:07 by padam            ###   ########.fr        #
+#    Updated: 2024/05/15 12:53:14 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./includes
+CFLAGS = -Wall -Wextra -Werror -I./include -lm
 
 SRC_PATH = src
 OBJ_PATH = obj
 
 OBJ_DIRS =	ft_char	ft_fd	ft_mem	ft_nb		ft_str		ft_prtf		\
-			ft_lst
+			ft_lst	ft_vec	ft_math
 
 SRCS_CHAR =	ft_isalnum.c		ft_isascii.c		ft_isprint.c		\
 			ft_isalpha.c		ft_isdigit.c		ft_tolower.c		\
@@ -32,6 +32,8 @@ SRCS_FD =	ft_putchar.c		ft_putendl_fd.c		ft_putstr.c			\
 SRCS_LST =	ft_lstadd_back.c	ft_lstadd_front.c	ft_lstclear.c		\
 			ft_lstdelone.c		ft_lstiter.c		ft_lstlast.c		\
 			ft_lstmap.c			ft_lstnew.c			ft_lstsize.c
+
+SRCS_MATH = magnitude.c
 
 SRCS_MEM =	ft_bzero.c			ft_calloc.c			ft_memchr.c			\
 			ft_memcmp.c			ft_memcpy.c			ft_memmove.c		\
@@ -50,13 +52,17 @@ SRCS_STR =	ft_split.c			ft_strchr.c			ft_strdup.c			\
 			ft_strtrim.c		ft_substr.c			get_next_line.c		\
 			ft_split_multi.c
 
+SRCS_VEC =	basic_math.c		length.c
+
 SRC_NAME =	$(addprefix ft_char/,	$(SRCS_CHAR))	\
 			$(addprefix ft_fd/,		$(SRCS_FD))		\
 			$(addprefix ft_lst/,	$(SRCS_LST))	\
+			$(addprefix ft_math/,	$(SRCS_MATH))	\
 			$(addprefix ft_mem/,	$(SRCS_MEM))	\
 			$(addprefix ft_nb/,		$(SRCS_NB))		\
 			$(addprefix ft_prtf/,	$(SRCS_PRTF))	\
 			$(addprefix ft_str/,	$(SRCS_STR))	\
+			$(addprefix ft_vec/,	$(SRCS_VEC))	\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
