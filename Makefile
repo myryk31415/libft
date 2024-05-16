@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/05/16 16:54:23 by padam            ###   ########.fr        #
+#    Updated: 2024/05/16 17:20:55 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,11 @@ NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I./includes -lm
+
+ifeq ($(shell uname), Linux)
+#Linux
+CFLAGS += -D LINUX -lm
+endif
 
 SRC_PATH = src
 OBJ_PATH = obj
