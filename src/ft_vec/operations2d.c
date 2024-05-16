@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 22:05:34 by padam             #+#    #+#             */
-/*   Updated: 2024/05/16 22:33:10 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/17 00:14:21 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,14 @@ t_vec2d	vec2d_div(t_vec2d a, double b)
 
 	result.x = a.x / b;
 	result.y = a.y / b;
+	return (result);
+}
+
+t_vec2d	vec2d_rot(t_vec2d a, double angle)
+{
+	t_vec2d	result;
+
+	result.x = a.x * cos(angle) + a.y * sin(angle);
+	result.y = a.x * -sin(angle) + a.y * cos(angle);
 	return (result);
 }
