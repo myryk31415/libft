@@ -13,20 +13,37 @@
 #ifndef FT_VEC_H
 # define FT_VEC_H
 
-typedef struct	s_vec
+typedef struct	s_vec3d
 {
 	double	x;
 	double	y;
 	double	z;
-}	t_vec;
+}	t_vec3d;
 
-t_vec	vec_add(t_vec a, t_vec b);
-t_vec	vec_sub(t_vec a, t_vec b);
-t_vec	vec_mul(t_vec a, double b);
-t_vec	vec_div(t_vec a, double b);
+typedef struct	s_vec2d
+{
+	double	x;
+	double	y;
+}	t_vec2d;
 
-double	vec_len(t_vec vec);
-t_vec	vec_norm(t_vec vec);
-double	vec_dist(t_vec a, t_vec b);
+// 3d
+t_vec3d	vec3d_add(t_vec3d a, t_vec3d b);
+t_vec3d	vec3d_sub(t_vec3d a, t_vec3d b);
+t_vec3d	vec3d_mul(t_vec3d a, double b);
+t_vec3d	vec3d_div(t_vec3d a, double b);
+
+double	vec3d_len(t_vec3d vec3d);
+t_vec3d	vec3d_norm(t_vec3d vec3d);
+double	vec3d_dist(t_vec3d a, t_vec3d b);
+
+//2d
+t_vec2d	vec2d_add(t_vec2d a, t_vec2d b);
+t_vec2d	vec2d_sub(t_vec2d a, t_vec2d b);
+t_vec2d	vec2d_mul(t_vec2d a, double b);
+t_vec2d	vec2d_div(t_vec2d a, double b);
+
+double	vec2d_len(t_vec2d vec2d);
+t_vec2d	vec2d_norm(t_vec2d vec2d);
+double	vec2d_dist(t_vec2d a, t_vec2d b);
 
 #endif

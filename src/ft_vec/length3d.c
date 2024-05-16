@@ -13,27 +13,26 @@
 #include "libft.h"
 #include <math.h>
 
-
-double	vec_len(t_vec vec)
+double	vec3d_len(t_vec3d vec3d)
 {
 	double	side_tmp;
 
-	side_tmp = ft_magnitude(vec.x, vec.y);
-	return (ft_magnitude(side_tmp, vec.z));
+	side_tmp = ft_magnitude(vec3d.x, vec3d.y);
+	return (ft_magnitude(side_tmp, vec3d.z));
 }
 
-t_vec	vec_norm(t_vec vec)
+t_vec3d	vec3d_norm(t_vec3d vec3d)
 {
 	double	length;
 
-	length = vec_len(vec);
-	vec.x /= length;
-	vec.y /= length;
-	vec.z /= length;
-	return (vec);
+	length = vec3d_len(vec3d);
+	vec3d.x /= length;
+	vec3d.y /= length;
+	vec3d.z /= length;
+	return (vec3d);
 }
 
-double	vec_dist(t_vec a, t_vec b)
+double	vec3d_dist(t_vec3d a, t_vec3d b)
 {
-	return (vec_len(vec_sub(a, b)));
+	return (vec3d_len(vec3d_sub(a, b)));
 }

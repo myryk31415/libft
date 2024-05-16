@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: antonweizmann <antonweizmann@student.42    +#+  +:+       +#+         #
+#    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/05/16 17:23:55 by antonweizma      ###   ########.fr        #
+#    Updated: 2024/05/16 22:39:11 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,8 @@ SRCS_STR =	ft_split.c			ft_strchr.c			ft_strdup.c			\
 			ft_strtrim.c		ft_substr.c			get_next_line.c		\
 			ft_split_multi.c
 
-SRCS_VEC =	basic_math.c		length.c
+SRCS_VEC =	operations3d.c		length3d.c			operations2d.c		\
+			length2d.c
 
 SRC_NAME =	$(addprefix ft_char/,	$(SRCS_CHAR))	\
 			$(addprefix ft_fd/,		$(SRCS_FD))		\
