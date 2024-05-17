@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 22:05:34 by padam             #+#    #+#             */
-/*   Updated: 2024/05/17 00:14:21 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/17 03:25:01 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,12 @@ t_vec2d	vec2d_rot(t_vec2d a, double angle)
 {
 	t_vec2d	result;
 
-	result.x = a.x * cos(angle) + a.y * sin(angle);
-	result.y = a.x * -sin(angle) + a.y * cos(angle);
+	result.x = a.x * cos(angle) + a.y * -sin(angle);
+	result.y = a.x * sin(angle) + a.y * cos(angle);
 	return (result);
+}
+
+double	vec2d_getrot(t_vec2d a)
+{
+	return (atan2(a.y, a.x));
 }

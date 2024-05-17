@@ -115,12 +115,14 @@ t_vec2d	vec2d_mul(t_vec2d a, double b);
 t_vec2d	vec2d_div(t_vec2d a, double b);
 
 /*
- *@brief Rotate a 2D vector clockwise by an angle
+ *@brief Rotate a 2D vector counterclockwise by an angle
  *@param a The vector to rotate
  *@param angle The angle in radians
  *@return The rotated vector
 */
 t_vec2d	vec2d_rot(t_vec2d a, double angle);
+
+double	vec2d_getrot(t_vec2d a);
 
 /*
  *@brief Get the length of a 2D vector
