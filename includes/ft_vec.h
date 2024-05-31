@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_vec.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
+/*   By: aweizman <aweizman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/14 20:56:56 by padam             #+#    #+#             */
-/*   Updated: 2024/05/14 21:11:09by padam            ###   ########.fr       */
+/*   Created: 2024/05/31 17:14:53 by aweizman          #+#    #+#             */
+/*   Updated: 2024/05/31 17:14:56 by aweizman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_VEC_H
 # define FT_VEC_H
 
-typedef struct	s_vec3d
+typedef struct s_vec3d
 {
 	double	x;
 	double	y;
 	double	z;
 }	t_vec3d;
 
-typedef struct	s_vec2d
+typedef struct s_vec2d
 {
 	double	x;
 	double	y;
