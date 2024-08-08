@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/05/16 22:39:11 by padam            ###   ########.fr        #
+#    Updated: 2024/08/08 08:52:19 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,12 @@ endif
 
 SRC_PATH = src
 OBJ_PATH = obj
+
+RED = \033[1;31m
+GREEN = \033[1;32m
+BLUE = \033[1;34m
+YELLOW = \033[1;33m
+RESET = \033[0m
 
 OBJ_DIRS =	ft_char	ft_fd	ft_mem	ft_nb		ft_str		ft_prtf		\
 			ft_lst	ft_vec	ft_math
@@ -78,7 +84,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
-	@printf "%-200s\r" "$(NAME) compiled"
+	@printf "$(GREEN)%-200s\n$(RESET)" "$(NAME) compiled"
 
 $(OBJ_PATH)	:
 	@mkdir -p $(OBJ_PATH)
