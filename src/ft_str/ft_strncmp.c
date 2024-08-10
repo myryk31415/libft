@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: padam <padam@student.42.fr>                +#+  +:+       +#+        */
+/*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 17:03:54 by padam             #+#    #+#             */
-/*   Updated: 2023/10/10 13:16:26 by padam            ###   ########.fr       */
+/*   Updated: 2024/08/10 08:54:59 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	if (n == i)
 		return (0);
 	return (*str1 - *str2);
+}
+
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	return (ft_strncmp(s1, s2, ft_strlen(s1)));
 }
