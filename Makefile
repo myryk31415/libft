@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/08/08 08:52:19 by padam            ###   ########.fr        #
+#    Updated: 2024/08/11 06:37:57 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ SRCS_MATH = magnitude.c
 
 SRCS_MEM =	ft_bzero.c			ft_calloc.c			ft_memchr.c			\
 			ft_memcmp.c			ft_memcpy.c			ft_memmove.c		\
-			ft_memset.c
+			ft_memset.c			ft_length.c
 
 SRCS_NB =	ft_abs.c			ft_atoi.c			ft_isint.c			\
 			ft_isnumber.c		ft_itoa.c
