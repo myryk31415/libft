@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_path_append.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 15:38:33 by padam             #+#    #+#             */
-/*   Updated: 2024/08/12 04:06:21 by padam            ###   ########.fr       */
+/*   Created: 2024/08/12 03:50:49 by padam             #+#    #+#             */
+/*   Updated: 2024/08/12 04:04:43 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+char	*ft_dir_append(char *path, char *name)
+{
+	int		len;
+	char	*combined;
 
-# include "ft_char.h"
-# include "ft_fd.h"
-# include "ft_lst.h"
-# include "ft_math.h"
-# include "ft_mem.h"
-# include "ft_nb.h"
-# include "ft_file.h"
-# include "ft_prtf.h"
-# include "ft_str.h"
-# include "ft_vec.h"
-
-#endif
+	len = ft_strlen(path) + ft_strlen(name) + 2;
+	combined = ft_calloc(len, sizeof(char));
+	if (!combined)
+		return (NULL);
+	ft_strlcpy(combined, path, len);
+	ft_strlcat(combined, "/", len);
+	ft_strlcat(combined, name, len);
+	return (combined);
+}

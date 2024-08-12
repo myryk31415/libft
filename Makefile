@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/08/11 06:37:57 by padam            ###   ########.fr        #
+#    Updated: 2024/08/12 19:21:19 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ YELLOW = \033[1;33m
 RESET = \033[0m
 
 OBJ_DIRS =	ft_char	ft_fd	ft_mem	ft_nb		ft_str		ft_prtf		\
-			ft_lst	ft_vec	ft_math
+			ft_lst	ft_vec	ft_math	ft_file
 
 SRCS_CHAR =	ft_isalnum.c		ft_isascii.c		ft_isprint.c		\
 			ft_isalpha.c		ft_isdigit.c		ft_tolower.c		\
@@ -39,6 +39,8 @@ SRCS_CHAR =	ft_isalnum.c		ft_isascii.c		ft_isprint.c		\
 SRCS_FD =	ft_putchar.c		ft_putendl_fd.c		ft_putstr.c			\
 			ft_putchar_fd.c		ft_putnbr.c			ft_putstr_fd.c		\
 			ft_putendl.c		ft_putnbr_fd.c
+
+SRCS_FILE =	ft_path_append.c
 
 SRCS_LST =	ft_lstadd_back.c	ft_lstadd_front.c	ft_lstclear.c		\
 			ft_lstdelone.c		ft_lstiter.c		ft_lstlast.c		\
