@@ -6,13 +6,13 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 03:50:49 by padam             #+#    #+#             */
-/*   Updated: 2024/08/12 04:04:43 by padam            ###   ########.fr       */
+/*   Updated: 2024/08/12 19:30:13 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_dir_append(char *path, char *name)
+char	*ft_path_append(char *path, char *name)
 {
 	int		len;
 	char	*combined;
