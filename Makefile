@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/08/24 08:03:15 by padam            ###   ########.fr        #
+#    Updated: 2024/08/24 08:29:37 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ SRCS_STR =	ft_split.c			ft_strchr.c			ft_strdup.c			\
 			ft_strlcpy.c		ft_strlen.c			ft_strmapi.c		\
 			ft_strncmp.c		ft_strnstr.c		ft_strrchr.c		\
 			ft_strtrim.c		ft_substr.c			get_next_line.c		\
-			ft_split_multi.c
+			ft_split_multi.c	ft_arrjoin.c
 
 SRCS_VEC =	operations3d.c		length3d.c			operations2d.c		\
 			length2d.c
