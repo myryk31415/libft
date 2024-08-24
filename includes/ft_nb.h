@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:23:30 by padam             #+#    #+#             */
-/*   Updated: 2024/08/24 08:20:14 by padam            ###   ########.fr       */
+/*   Updated: 2024/08/24 09:06:52 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		ft_atoi(const char *str);
 int		ft_isint(char *str);
 int		ft_isnumber(char *str);
 char	*ft_itoa(int n);
+char	*ft_ltoa(long n);
 char	*ft_ultoa(unsigned long n);
 
 #endif
