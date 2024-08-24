@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/08/13 06:09:23 by padam            ###   ########.fr        #
+#    Updated: 2024/08/24 08:03:15 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ SRCS_VEC =	operations3d.c		length3d.c			operations2d.c		\
 
 SRC_NAME =	$(addprefix ft_char/,	$(SRCS_CHAR))	\
 			$(addprefix ft_fd/,		$(SRCS_FD))		\
-			$(addprefix ft_file/,		$(SRCS_FILE))		\
+			$(addprefix ft_file/,	$(SRCS_FILE))	\
 			$(addprefix ft_lst/,	$(SRCS_LST))	\
 			$(addprefix ft_math/,	$(SRCS_MATH))	\
 			$(addprefix ft_mem/,	$(SRCS_MEM))	\
