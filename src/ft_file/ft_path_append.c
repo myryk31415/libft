@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 03:50:49 by padam             #+#    #+#             */
-/*   Updated: 2024/08/12 19:30:13 by padam            ###   ########.fr       */
+/*   Updated: 2024/08/27 02:56:51 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ char	*ft_path_append(char *path, char *name)
 	int		len;
 	char	*combined;
 
+	if (!name && !path)
+		return (NULL);
+	if (!name)
+		return (ft_strdup(path));
+	if (!path)
+		return (ft_strdup(name));
 	len = ft_strlen(path) + ft_strlen(name) + 2;
 	combined = ft_calloc(len, sizeof(char));
 	if (!combined)
