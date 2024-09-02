@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 08:22:53 by padam             #+#    #+#             */
-/*   Updated: 2024/08/24 08:37:29 by padam            ###   ########.fr       */
+/*   Updated: 2024/09/03 01:16:31 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
  * @brief joins a string array into a long string
  * @return the new allocated string, `NULL` on error
  */
-char *ft_arrjoin(char **arr, char *delimiter)
+char	*ft_arrjoin(char **arr, char *delimiter)
 {
-	int 	len;
+	int		len;
 	int		i;
 	char	*joined_string;
-
 
 	i = 0;
 	len = 0;

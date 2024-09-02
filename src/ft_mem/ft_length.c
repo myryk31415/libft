@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 03:30:46 by padam             #+#    #+#             */
-/*   Updated: 2024/08/11 06:34:50 by padam            ###   ########.fr       */
+/*   Updated: 2024/09/03 01:17:12 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_length(void *arr, int size)
 
 	cast = (bool *)arr;
 	i = 0;
-	while(cast[i*size])
+	while (cast[i * size])
 		i++;
 	return (i);
 }
